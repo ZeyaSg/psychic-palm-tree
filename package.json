@@ -1,0 +1,15 @@
+{
+  "name": "qyay",
+  "scripts": {
+    "format:write": "prettier --write \"**/{src,test}/**/*.{ts,tsx}\" --config \".prettierrc\" --cache",
+    "format:check": "prettier --check \"**/{src,test}/**/*.{ts,tsx}\" --config \".prettierrc\" --cache",
+    "docker:up": "pnpm --filter qyay-api run docker:up",
+    "start:api": "pnpm --filter qyay-api run start:dev",
+    "start:app": "pnpm --filter qyay-app run dev",
+    "start:all": "concurrently \"pnpm run start:app\" \"pnpm run start:api\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.4"
+  }
+}
